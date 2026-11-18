@@ -27,7 +27,7 @@ def analyze_local(text):
     for label,terms,points in rules:
         hits=[x for x in terms if x in lower]
         if hits: findings.append({"indicator":label,"evidence":", ".join(hits),"points":points}); score+=points
-    urls=re.findall(r"https?://\\S+", text, flags=re.I)
+    urls=re.findall("https?://[^ ]+", text, flags=re.I)
     if urls: findings.append({"indicator":"URL present","evidence":f"{len(urls)} URL(s) extracted; not visited or verified.","points":10}); score+=10
     score=min(score,100)
     band="High concern" if score>=60 else "Needs caution" if score>=25 else "Lower concern"
