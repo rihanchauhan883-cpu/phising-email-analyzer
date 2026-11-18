@@ -77,3 +77,18 @@ The project demonstrates a practical use of generative AI for cybersecurity educ
 - NIST, Artificial Intelligence Risk Management Framework (AI RMF 1.0): https://www.nist.gov/itl/ai-risk-management-framework
 - Streamlit documentation: https://docs.streamlit.io/
 - OpenAI API documentation: https://platform.openai.com/docs/
+
+
+## 13. Submission Deliverables (Current Repository)
+- Working Streamlit email-analysis interface with built-in synthetic sample selection.
+- Local detection findings with supporting keyword evidence and an illustrative 0–100 heuristic risk score.
+- Session-only investigation dashboard with counts by risk band and extracted URL totals.
+- Downloadable TXT and JSON incident reports.
+- Architecture diagram and data-flow notes: [docs/ARCHITECTURE.md](docs/ARCHITECTURE.md).
+- Functional test matrix: [docs/TEST_CASES.md](docs/TEST_CASES.md).
+
+## 14. Risk Scoring Details
+The score adds fixed points for each matched category: urgency (20), credential request (25), payment pressure (20), threat/reward language (15), and URL presence (10), capped at 100. Bands are 0–24 Lower concern, 25–59 Needs caution, and 60–100 High concern. This score is illustrative and is not a calibrated probability or validated classifier.
+
+## 15. Submission Verification Status
+The source files and documentation are committed in the repository. Functional execution, screenshots, and actual test outcomes still require a manual run in the target environment. Complete the Pass/Fail column in the test matrix only after executing each case. Deployment to Streamlit Community Cloud is a separate step and is not implied by a GitHub commit.
